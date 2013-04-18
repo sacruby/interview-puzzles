@@ -1,5 +1,24 @@
 describe "Array Sorting" do
 
+  def my_insertion_sort(array)
+    if array.nil? or array.size < 2
+      return array
+    end
+    
+    length = array.size
+
+    array[1..length].each_with_index do |item, index|
+
+      while index >= 0 and array[index] > item do
+        array[index + 1] = array[index]
+        index = index - 1
+      end
+      array[index + 1] = item
+    end
+
+    array
+  end
+
   it "should return nil" do
     my_insertion_sort(nil).should == nil
   end
