@@ -25,6 +25,14 @@ describe "Stack" do
     @stack.size.should == 0
   end
 
+  it "should empty stack with multiple items" do
+    @stack.push(1)
+    @stack.push(2)
+    @stack.pop
+    @stack.pop
+    @stack.size.should == 0
+  end
+
   it "should not push nil as a valid value" do
     @stack.push(nil)
     @stack.size.should == 0
